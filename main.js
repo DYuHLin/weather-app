@@ -1,5 +1,9 @@
 const weatherLocation = document.getElementById("location");
+const toggleTemp = document.getElementById("tempTrigger");
 //This is the API info, where we get the weather information
+
+let isChecked = false;
+
 const apiKey = "fcf8fbcfdc9406912f7278337b6189e2";
 
 //Async function to retrieve the data
@@ -27,7 +31,7 @@ const showInUi = (info) => {
     const maxTemp = kelvinToCel(info.main.temp_max);
     const city = info.name;
     const desc = info.weather[0].main;
-
+    
     let weatherAll = `<div class="city_name">${city}</div>
                         <div class="temp">
                         <div class="num">
@@ -46,7 +50,7 @@ const showInUi = (info) => {
                             </div>
                         </div>`;
 
-    if(info.weather[0].description === "broken clouds" || info.weather[0].description === "few clouds" || info.weather[0].description === "scattered clouds"){
+    if(info.weather[0].description === "broken clouds" || info.weather[0].description === "few clouds" || info.weather[0].description === "scattered clouds" || info.weather[0].description === "overcast clouds"){
         main.style.background = "linear-gradient(to right, rgba(57, 76, 99, 0.8), rgba(60, 114, 136, 0.8))";
     } else if(info.weather[0].description === "clear sky"){
         main.style.background = "linear-gradient(to right, rgba(19, 118, 240, 0.8), rgba(46, 191, 248, 0.8))";
@@ -79,3 +83,23 @@ weatherLocation.addEventListener("submit", (e) => {
 const kelvinToCel = (num) => {
     return (num - 273.15).toFixed(2);
 };
+
+//converts celsius to Farenheit
+const CeltoFer = (num) => {
+    return (1.8*(num + 32)).toFixed(2);
+};
+
+//converts fahrenheit to Celsius
+const fahToCel = (num) => {
+    return ((num - 32) * 5/9).toFixed(2);
+};
+
+toggleTemp.addEventListener('change', () => {
+    if(toggleTemp.checked){
+        isChecked = true;
+        console.log(isChecked);
+    } else{
+        isChecked = false;
+        console.log(isChecked);
+    };
+});
