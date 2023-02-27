@@ -11,6 +11,12 @@ const weatherInfo = async (location_weather) => {
 
 weatherInfo("London");
 
+//shows the results in the UI
+const showInUi = () => {
+    
+};
+
+//gets the weather info with search 
 weatherLocation.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -19,3 +25,8 @@ weatherLocation.addEventListener("submit", (e) => {
     weatherInfo(weatherLocationInfo);
     weatherText.value = "";
 });
+
+//converts kelvin to celsius
+const kelvinToCel = (num) => {
+    let weatherVal = (num - 273.15).toFixed(2);
+};

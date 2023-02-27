@@ -6,11 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
     <link rel="stylesheet" href="./style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <form id="location">
-        <input id="weather-text" type="text">
-    </form>
+    <div class="main">
+        <div class="container glass">
+            <div class="search">
+                <div class="heading">Weather</div>
+                <div class="heading_search">Search Location</div>
+                <form id="location">
+                    <input id="weather-text" class="glass" type="text" placeholder="Type the name of any city">
+                </form>
+                <div class="temp_text">Switch to °C/°F</div>
+            </div>
+            <div class="info">
+                <!-- <div class="city_name">London</div>
+                <div class="temp">24°C</div>
+                <div class="feel">Clear Sky</div>
+                <div class="extra">
+                    <div class="feels_like">Feels like: 24°</div>
+                    <div class="humidity">Humidity levels: 35%</div>
+                    <div class="wind">Wind: 2.63k/m</div>
+                </div> -->
+            </div>
+        </div>
+    </div>
     
     <script src="./main.js"></script>
 </body>
