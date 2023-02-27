@@ -9,12 +9,12 @@ body{
 .main{
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(to right, rgba(19, 118, 240, 0.8), rgba(46, 191, 248, 0.8));
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* transition: all ease-in 0.4s; */
 }
 
 .glass{
@@ -30,7 +30,8 @@ body{
     border-radius: 8px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 644px;
     padding-left: 32px;
     padding-right: 24px;
     margin: 44px;
@@ -42,33 +43,49 @@ input{
     border: none;
 }
 
-input::placeholder{
-    color: gray;
+.heading_search{
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.heading_search{
+.words{
     margin-top: 18px;
     margin-bottom: 12px;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+i{
     font-size: 26px;
 }
 
 .heading{
     font-size: 32px;
+    font-weight: 600;
 }
 
 .temp_text{
     margin-top: 12px;
     font-size: 16px;
+    margin-bottom: 16px;
 }
 
 .city_name{
     font-size: 32px;
+    font-weight: 600;
 }
 
 .temp{
-    font-size: 28px;
     margin-top: 18px;
     margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.num{
+    font-size: 28px;
 }
 
 .feel{
@@ -79,5 +96,31 @@ input::placeholder{
 .extra{
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
+}
+
+.min-max{
+    display: flex;
+    gap: 12px;
+}
+
+img{
+    width: 56px;
+    height: 56px;
+}
+
+.wind{
+    margin-bottom: 16px;
+}
+
+button{
+    padding: 14px;
+    font-size: 18px;
+    border: none;
+    border-radius: 7px;
+}
+
+button:hover{
+    cursor: pointer;
+    transform:scale(1.05);
 }

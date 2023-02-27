@@ -6,20 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="cloud-rain-solid-24.png" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <div class="main">
+    <div id="main" class="main">
         <div class="container glass">
             <div class="search">
                 <div class="heading">Weather</div>
-                <div class="heading_search">Search Location</div>
+                <div class="heading_search">
+                    <div class="words">Search Location</div>
+                    <i class='bx bx-location-plus'></i>
+                </div>
                 <form id="location">
-                    <input id="weather-text" class="glass" type="text" placeholder="Type the name of any city">
+                    <input id="weather-text" class="glass" type="text" autocomplete="off">
                 </form>
                 <div class="temp_text">Switch to °C/°F</div>
+                <button class="glass">Switch</button>
             </div>
-            <div class="info">
+            <div id="card" class="info">
+                
                 <!-- <div class="city_name">London</div>
                 <div class="temp">24°C</div>
                 <div class="feel">Clear Sky</div>
