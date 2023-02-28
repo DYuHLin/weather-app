@@ -140,6 +140,17 @@ button:hover{
     height: 0;
   }
   
+.bottom{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
   /* The slider */
   .slider {
     position: absolute;
