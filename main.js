@@ -8,11 +8,15 @@ const apiKey = "fcf8fbcfdc9406912f7278337b6189e2";
 
 //Async function to retrieve the data
 const weatherInfo = async (location_weather) => {
-    const fetchInfo = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location_weather}&appid=${apiKey}`, {mode: "cors"});
-    const responseInfo = await fetchInfo.json();
-    console.log(responseInfo);
+    try{
+        const fetchInfo = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location_weather}&appid=${apiKey}`, {mode: "cors"});
+        const responseInfo = await fetchInfo.json();
+        console.log(responseInfo);
 
-    showInUi(responseInfo);
+        showInUi(responseInfo);
+    } catch (err) {
+        alert("There was an error, please try again");
+    };
 };
 
 weatherInfo("London");
@@ -105,6 +109,7 @@ const showInUi = (info) => {
                             </div>
                         </div>`;
 
+    //changes background depending on the weather description
     if(info.weather[0].description === "broken clouds" || info.weather[0].description === "few clouds" || info.weather[0].description === "scattered clouds" || info.weather[0].description === "overcast clouds"){
         main.style.background = "linear-gradient(to right, rgba(57, 76, 99, 0.8), rgba(60, 114, 136, 0.8))";
     } else if(info.weather[0].description === "clear sky"){
@@ -112,7 +117,7 @@ const showInUi = (info) => {
         if(info.weather[0].description === "clear sky" && tempInC >= 25){
             main.style.background = "linear-gradient(to right, rgba(161, 77, 21, 0.8), rgba(235, 146, 14, 0.8))";
         };
-    } else if(info.weather[0].description === "shower rain" || info.weather[0].description === "rain" || info.weather[0].description === "thunderstorm") {
+    } else if(info.weather[0].description === "shower rain" || info.weather[0].description === "rain" || info.weather[0].description === "thunderstorm" || info.weather[0].description === "moderate rain") {
         main.style.background = "linear-gradient(to right, rgba(19, 70, 133, 0.8), rgba(13, 115, 155, 0.8))";
     } else if(info.weather[0].description === "mist"){
         main.style.background = "linear-gradient(to right, rgba(68, 77, 88, 0.8), rgba(129, 149, 156, 0.8))";
