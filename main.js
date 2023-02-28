@@ -31,6 +31,59 @@ const showInUi = (info) => {
     const maxTemp = kelvinToCel(info.main.temp_max);
     const city = info.name;
     const desc = info.weather[0].main;
+
+    toggleTemp.addEventListener('change', () => {
+        if(toggleTemp.checked){
+            weatherCard.innerHTML = "";
+            isChecked = true;
+            let tempInF = CeltoFer(tempInC);
+            let feelsF = CeltoFer(feelsLike);
+            let minF = CeltoFer(minTemp);
+            let maxF = CeltoFer(maxTemp);
+            let weatherAllF = `<div class="city_name">${city}</div>
+                        <div class="temp">
+                        <div class="num">
+                        ${tempInF}°F
+                        </div>
+                        <img src="https://openweathermap.org/img/wn/${info.weather[0].icon}@2x.png" alt="${desc}">
+                        </div>
+                        <div class="feel">${desc}</div>
+                        <div class="extra">
+                            <div class="feels_like">Feels like: ${feelsF}°F</div>
+                            <div class="humidity">Humidity levels: ${humidity}%</div>
+                            <div class="wind">Wind: ${windSpeed}km</div>
+                            <div class = "min-max"> 
+                                <div class="min">Min: ${minF}°F</div>
+                                <div class="max">Max: ${maxF}°F</div>
+                            </div>
+                        </div>`;
+            console.log(tempInC);
+
+            weatherCard.innerHTML = weatherAllF;
+        } else{
+            weatherCard.innerHTML = "";
+            isChecked = false;
+            let weatherAll = `<div class="city_name">${city}</div>
+                        <div class="temp">
+                        <div class="num">
+                        ${tempInC}°C
+                        </div>
+                        <img src="https://openweathermap.org/img/wn/${info.weather[0].icon}@2x.png" alt="${desc}">
+                        </div>
+                        <div class="feel">${desc}</div>
+                        <div class="extra">
+                            <div class="feels_like">Feels like: ${feelsLike}°C</div>
+                            <div class="humidity">Humidity levels: ${humidity}%</div>
+                            <div class="wind">Wind: ${windSpeed}km</div>
+                            <div class = "min-max"> 
+                                <div class="min">Min: ${minTemp}°C</div>
+                                <div class="max">Max: ${maxTemp}°C</div>
+                            </div>
+                        </div>`;
+
+                        weatherCard.innerHTML = weatherAll;
+        };
+    });
     
     let weatherAll = `<div class="city_name">${city}</div>
                         <div class="temp">
@@ -86,20 +139,5 @@ const kelvinToCel = (num) => {
 
 //converts celsius to Farenheit
 const CeltoFer = (num) => {
-    return (1.8*(num + 32)).toFixed(2);
+    return ((num *1.8) + 32).toFixed(2);
 };
-
-//converts fahrenheit to Celsius
-const fahToCel = (num) => {
-    return ((num - 32) * 5/9).toFixed(2);
-};
-
-toggleTemp.addEventListener('change', () => {
-    if(toggleTemp.checked){
-        isChecked = true;
-        console.log(isChecked);
-    } else{
-        isChecked = false;
-        console.log(isChecked);
-    };
-});
