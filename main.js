@@ -32,7 +32,9 @@ const showInUi = (info) => {
     const city = info.name;
     const desc = info.weather[0].main;
 
+    //toggle switches the temp
     toggleTemp.addEventListener('change', () => {
+        //for F
         if(toggleTemp.checked){
             weatherCard.innerHTML = "";
             isChecked = true;
@@ -57,9 +59,9 @@ const showInUi = (info) => {
                                 <div class="max">Max: ${maxF}°F</div>
                             </div>
                         </div>`;
-            console.log(tempInC);
 
             weatherCard.innerHTML = weatherAllF;
+            //For C
         } else{
             weatherCard.innerHTML = "";
             isChecked = false;

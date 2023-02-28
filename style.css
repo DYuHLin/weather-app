@@ -191,9 +191,88 @@ button:hover{
     border-radius: 50%;
   }
 
-  /* @media (width: 1200px){
+   @media (max-width: 1200px){
     .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 344px;
+    }
+    
+  } 
+
+  @media (max-width: 800px){
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 300px;
+    }
+    
+  } 
+
+  @media (max-width: 600px){
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+  } 
+
+  @media (max-height: 670px){
+    .container{
+        height: 90vh;
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .min-max{
+        display: flex;
+    }
+
+    .temp{
+        display: flex;
+        align-items: center;
+    }
+
+    .temp_text{
+        font-size: 12px;
+    }
+
+    .city_name, .heading{
+        font-size: 26px;
+        font-weight: 600;
+    }
+
+    .words{
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    .extra{
         display: flex;
         flex-direction: column;
     }
-  } */
+
+    .min-max{
+        display: flex;
+    }
+    
+  } 
+
+  @media screen and (max-width: 1200px) and 
+  (max-height: 600px) {
+    .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 344px;
+    flex-direction: row;
+}   
+} 
